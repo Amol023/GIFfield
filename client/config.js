@@ -1,7 +1,16 @@
-angular.module('giffieldapp', [])
+var app = angular.module('musicPlayer', []);
 
-  .controller('mainController', function($scope){
-
-    $scope.name = "hello world";
-
-  });
+app.config(function($routeProvider) {
+ $routeProvider
+     .when('/', {
+      controller: 'HomeController',
+      templateUrl: 'client/home.html'
+     })
+ 		.when('/photos', {
+   		controller: 'PhotoController',
+      templateUrl: 'client/photo.html'
+ 		})
+      .otherwise({
+        redirectTo: '/'
+      });
+}); 
