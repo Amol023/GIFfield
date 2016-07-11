@@ -113,6 +113,21 @@ appPlayer.controller('HomeController', ['$scope', 'socket',
     });
 =======
   function($scope, socket) {
+    SC.initialize({
+      client_id: '8af4a50e36c50437ca44cd59756301ae'
+    });
+
+    SC.stream('/tracks/293', function(player){
+      $('#playBack').click(function(e) {
+        e.preventDefault();
+        player.start();
+      });
+      $('#stop').click(function(e) {
+        e.preventDefault();
+        player.pause();
+      });
+   });
+    
     /// chat controller stuff
     $scope.user = false;
     $scope.typing = false;
