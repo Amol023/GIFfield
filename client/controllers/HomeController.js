@@ -127,7 +127,7 @@ appPlayer.controller('HomeController', ['$scope', 'socket',
         player.pause();
       });
    });
-    
+
     /// chat controller stuff
     $scope.user = false;
     $scope.typing = false;
@@ -185,7 +185,7 @@ appPlayer.controller('HomeController', ['$scope', 'socket',
       $scope.chatMessages.splice(i, 1);
     });
 
-}]);  
+}])  
 .factory('socket', function($rootScope){
   var socket = io.connect();
   return{
