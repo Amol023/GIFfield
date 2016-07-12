@@ -120,7 +120,9 @@ appPlayer.controller('HomeController', ['$scope', 'socket',
     SC.stream('/tracks/293', function(player){
       $('#playBack').click(function(e) {
         e.preventDefault();
-        player.start();
+        if (player.isPlaying === false) {
+          player.play();
+        }
       });
       $('#stop').click(function(e) {
         e.preventDefault();
